@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Checing if user is admin if not then set access level to standard user
+
 read -p "What is your name? " name
 
 if [ -z "$name" ]; then
@@ -9,5 +11,5 @@ elif [ "$name" = "admin" ]; then
     echo "Welcome, administrator!"
 else
     echo "Access Level: Standard User - $name"
-    
+
 fi
