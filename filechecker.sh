@@ -8,9 +8,18 @@ file=$1
 if [ -z "$file" ]; then 
     echo "Need path"
     exit 1
-# if path specifies a file and it is found
+# if path specifies a file and it is found and what the permissions are
 elif [ -f "$file" ]; then
     echo "File found"
+    if [ -r "$file" ]; then
+        echo "is readable"
+    fi
+    if [ -w "$file" ]; then
+        echo "is writeable"
+    fi
+    if [ -x "$file" ]; then
+        echo "is executable"
+    fi
 # if path specifies a directory and it is found
 elif [ -d "$file" ]; then
     echo "Directory Found"
